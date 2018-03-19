@@ -3,10 +3,13 @@
     line-height: 60px;
     border-bottom: 1px solid #ddd;
     background: #fff;
+    text-align: center;
 }
 .nav-simple .logo{
     font-size: 26px;
-    font-weight: bold;
+    font-weight: bolder;
     color: #c60023;
+    text-align: center;
     text-decoration: none;
+    font-family: '幼圆';
 }

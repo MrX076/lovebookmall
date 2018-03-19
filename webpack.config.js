@@ -1,32 +1,4 @@
 
-// var webpack = require('webpack');
-
-// var config = {
-//     entry: {
-//         index:__dirname+'/src/page/index/index.js',
-//         login:__dirname+'/src/page/login/index.js',
-//         common:__dirname+'/src/page/common/index.js',
-      
-//     },
-//     output: {
-//         path:__dirname+'/dist',
-//         filename:'js/[name].js'
-//     },
-//     externals: {
-//         'jquery' : 'window.jquery'
-//     },
-//     plugins: [
-//         new webpack.optimize.CommonsChunkPlugin({
-//             name : 'common',
-//             filename : 'js/base.js'
-//         })
-//     ]
-    
-// };
-
-// module.exports = config;
-
-
 var webpack             = require('webpack');
 var path                = require("path");
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
@@ -52,7 +24,8 @@ var config = {
     entry: {
         'common'            : ['./src/page/common/index.js'],
         'index'             : ['./src/page/index/index.js'],
-        'lovebook'             : ['./src/util/lovebook.js'],
+        'lovebook'          : ['./src/util/lovebook.js'],
+        'result'            : ['./src/page/result/index.js'],
         
     },
     output: {
@@ -96,21 +69,11 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        // new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
-        // new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),
+        new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '通用操作')),
         // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
     
     ],
-    // devServer:{    // 配置服务器   webpack-dev-server
-    //             contentBase:path.join(__dirname,"dist"),  // 服务器目录 
-    //             compress:true,
-    //             hot:true,
-    //             host:"0.0.0.0",
-    //             port:7000,
-    //             publicPath:"/",
-    //             historyApiFallback: true,    // html5 history api 
-    //             disableHostCheck: true,
-    //     },
 };
 
 if('dev' === WEBPACK_ENV){

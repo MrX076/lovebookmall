@@ -41,7 +41,7 @@ input [type='checkbox']{
     display: none;
 }
 .link{
-    color: #999;
+    color: #6C6C6C;;
     cursor: pointer;
     text-decoration: none;
 }
@@ -60,7 +60,7 @@ input [type='checkbox']{
     line-height: 40px;
     vertical-align: middle;
     border: none;
-    background: #c60023;
+    background:  #ff5000;
     font-size: 17px;
     font-weight: bold;
     color: #fff;

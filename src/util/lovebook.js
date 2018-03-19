@@ -1,44 +1,3 @@
-// "use strict"
-
-// var lovebook = {
-
-//     request : function(param){
-//         $.ajax({
-//             type        : param.method   || 'get',
-//             url         : param.url      || '',
-//             dataType    : param.type     || 'json',
-//             data        : param.data     || '',
-//             success     : function(res){
-//               //请求成功
-//                 if(0 === res.status){
-//                     typeof param.success === 'function' && param.success(res.data,res.msg);
-//                 }
-//                 //无登录状态，需强制登录
-//                 else if(10 ===res.status){
-//                     _this.dologin();
-//                 }
-//                 else if(1 ===res.status){
-//                     typeof param.error === 'function' && param.error(res.msg);
-//                 }
-//             },
-//             error        : function(err){
-//                 typeof param.error === 'function' && param.error(err.statusText);                    
-//             }
-//         })
-//     },
-//     dologin   : function(){
-//         window.location.href = './login.html?redirect='+ encodeURIComponent(window.location.href);
-//     }
-
-
-// }
-
-// module.exports = lovebook;
-
-
-
-
-
 
 
 'use strict';
@@ -96,7 +55,7 @@ var _lovebook = {
     },
     // 错误提示
     errorTips : function(msg){
-        alert(msg || '哪里不对了~');
+        alert(msg || '也许是错了吧');
     },
     // 字段的验证，支持非空、手机、邮箱的判断
     validate : function(value, type){
