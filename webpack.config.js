@@ -26,6 +26,9 @@ var config = {
         'index'             : ['./src/page/index/index.js'],
         'lovebook'          : ['./src/util/lovebook.js'],
         'result'            : ['./src/page/result/index.js'],
+        'user-login'        : ['./src/page/user-login/index.js'],
+        'user-register'     : ['./src/page/user-register/index.js'],
+        
         
     },
     output: {
@@ -40,6 +43,7 @@ var config = {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }) },
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
+            { test: /\.jpg*$/, loader: "file-loader?name=images/[hash:8].[name].[ext]" },
             {
                 test: /\.string$/, 
                 loader: 'html-loader',
@@ -67,18 +71,20 @@ var config = {
         }),
         // 把css单独打包到文件里
         new ExtractTextPlugin("css/[name].css"),
+        
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
-        new HtmlWebpackPlugin(getHtmlConfig('result', '通用操作')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-register', '注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '登陆提示')),
         // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
     
     ],
 };
-
-if('dev' === WEBPACK_ENV){
-    config.entry.common.push('webpack-dev-server/client?http://localhost:8088/');
-}
+//不知道作用
+// if('dev' === WEBPACK_ENV){
+//     config.entry.common.push('webpack-dev-server/client?http://localhost:8088/dist/view/index.html');
+// }
 
 
 module.exports = config;

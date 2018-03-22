@@ -68,6 +68,9 @@ input [type='checkbox']{
     cursor: pointer;
     text-decoration: none;
 }
+.btn:hover{
+    background: #d61837;
+}
 
 .btn-min{
     display: inline-block;
