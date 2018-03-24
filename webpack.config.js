@@ -28,8 +28,7 @@ var config = {
         'result'            : ['./src/page/result/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
-        
-        
+        'user-pass-reset'     : ['./src/page/user-pass-reset/index.js'],  
     },
     output: {
         path        : __dirname + '/dist/',
@@ -76,6 +75,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         new HtmlWebpackPlugin(getHtmlConfig('user-login', '登录')),
         new HtmlWebpackPlugin(getHtmlConfig('user-register', '注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '重置密码')),        
         new HtmlWebpackPlugin(getHtmlConfig('result', '登陆提示')),
         // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
     

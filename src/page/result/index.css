@@ -5,10 +5,11 @@
     background: #fff;
 }
 .result-con{
-    /* display: none; */
+    display: none;
 }
 .result-con .result-title{
     color: #555;
+    
 }
 .result-con .result-content{
     margin-top: 20px;
