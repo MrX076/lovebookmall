@@ -6,7 +6,7 @@ var nav ={
     init : function(){
         this.bindEvent();
         this.loadUserInfo();
-        this.loadCartCount();
+        // this.loadCartCount();
         return this;
     },
     bindEvent : function() {
@@ -35,7 +35,7 @@ var nav ={
             $('.user.not-login').hide().siblings('.user.login').show()
                 .find('.username').text(res.username);
         }, function(errMsg){
-            // do nothing
+            
         });
     },
     // 加载购物车数量

@@ -55,7 +55,7 @@ var _lovebook = {
     },
     // 错误提示
     errorTips : function(msg){
-        alert(msg || '也许是错了吧');
+        alert(msg || '哪里不对了~');
     },
     // 字段的验证，支持非空、手机、邮箱的判断
     validate : function(value, type){

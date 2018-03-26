@@ -1,8 +1,7 @@
-
 'use strict';
 require('./index.css');
-var _lovebook             = require('util/lovebook.js');
-var templateIndex   = require('./index.string');
+var _lovebook           = require('util/lovebook.js');
+var templateIndex       = require('./index.string');
 // 侧边导航
 var navSide = {
     option : {
@@ -11,7 +10,7 @@ var navSide = {
             {name : 'user-center', desc : '个人中心', href: './user-center.html'},
             {name : 'order-list', desc : '我的订单', href: './order-list.html'},
             {name : 'user-pass-update', desc : '修改密码', href: './user-pass-update.html'},
-            {name : 'about', desc : '关于MMall', href: './about.html'}
+            {name : 'about', desc : '关于lovebook', href: './about.html'}
         ]
     },
     init : function(option){
@@ -33,9 +32,7 @@ var navSide = {
         });
         // 把html放入容器
         $('.nav-side').html(navHtml);
-    },
-  
-
+    }
 };
 
-module.exports = navSide.init();
+module.exports = navSide;

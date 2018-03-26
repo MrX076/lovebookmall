@@ -1,7 +1,7 @@
 .page-wrap{
     padding: 40px 0;
     background: tomato;
-    /* background-image:url('./image/background-book.jpg') ; */
+    /* background:url('../../image/background/background-book.jpg') no-repeat ; */
 }
 /* 表单框 */
 .user-con{
