@@ -3,13 +3,31 @@
 require('./index.css');
 require('page/common/header/index.js');
 require('page/common/nav/index.js');
-// require('page/common/nav-side/index.js');
 var navSide = require('page/common/nav-side/index.js');
 var _lovebook      = require('util/lovebook.js');
 
 navSide.init({
     name:'user-center'
 })
+
+var swiper = new Swiper('.swiper-container', {
+    pagination: {el:'.swiper-pagination',},
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    paginationClickable: true,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    autoplay: true,
+    
+    autoplayDisableOnInteraction: false
+});
+
+
+
+
 ///测试线上数据的请求是是否能够成功
 // _lovebook.request({
 //     url: 'happymmall.com/product/list.do?keyword=1',

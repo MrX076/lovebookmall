@@ -1,6 +1,5 @@
 
 var webpack             = require('webpack');
-var path                = require("path");
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin   = require('html-webpack-plugin');
 
@@ -12,7 +11,7 @@ var getHtmlConfig = function(name, title){
     return {
         template    : './src/view/' + name + '.html',
         filename    : 'view/' + name + '.html',
-        // favicon     : './favicon.ico',
+        favicon     : './favicon.ico',
         title       : title,
         inject      : true,
         hash        : true,
@@ -24,6 +23,7 @@ var config = {
     entry: {
         'common'               : ['./src/page/common/index.js'],
         'index'                : ['./src/page/index/index.js'],
+        'list'                 : ['./src/page/list/index.js'],
         'lovebook'             : ['./src/util/lovebook.js'],
         'result'               : ['./src/page/result/index.js'],
         'user-login'           : ['./src/page/user-login/index.js'],
@@ -31,7 +31,10 @@ var config = {
         'user-pass-reset'      : ['./src/page/user-pass-reset/index.js'],
         'user-pass-update'     : ['./src/page/user-pass-update/index.js'],        
         'user-center'          : ['./src/page/user-center/index.js'],
-        'user-center-updata'   : ['./src/page/user-center-updata/index.js'],                               
+        'user-center-updata'   : ['./src/page/user-center-updata/index.js'], 
+        'detail'               : ['./src/page/detail/index.js'],
+         
+
     },
     output: {
         path        : __dirname + '/dist/',
@@ -45,7 +48,7 @@ var config = {
         loaders: [
             { test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }) },
             { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
-            { test: /\.jpg*$/, loader: "file-loader?name=images/[hash:8].[name].[ext]" },
+            // { test: /\.jpg*$/, loader: "file-loader?name=images/[hash:8].[name].[ext]" },
             {
                 test: /\.string$/, 
                 loader: 'html-loader',
@@ -83,14 +86,14 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('user-center-updata', '修改个人信息')),                                                     
         new HtmlWebpackPlugin(getHtmlConfig('result', '登陆提示')),
-        // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车'))
-    
+        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
+        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),        
     ],
 };
-//不知道作用
-// if('dev' === WEBPACK_ENV){
-//     config.entry.common.push('webpack-dev-server/client?http://localhost:8088/dist/view/index.html');
-// }
+// 不知道作用
+if('dev' === WEBPACK_ENV){
+    config.entry.common.push('webpack-dev-server/client?http://localhost:8088/dist/view/index.html');
+}
 
 
 module.exports = config;
