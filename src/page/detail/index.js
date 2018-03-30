@@ -49,7 +49,7 @@ var page = {
                 productId   : _this.data.productId,
                 count       : $('.p-count').val()
             }, function(res){
-                window.location.href = './result.html?type=cart-add';
+                window.location.href = './cart.html?';
             }, function(errMsg){
                 _lovebook.errorTips(errMsg);
             });

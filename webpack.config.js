@@ -33,6 +33,8 @@ var config = {
         'user-center'          : ['./src/page/user-center/index.js'],
         'user-center-updata'   : ['./src/page/user-center-updata/index.js'], 
         'detail'               : ['./src/page/detail/index.js'],
+        'cart'                 : ['./src/page/cart/index.js'],
+        
          
 
     },
@@ -87,7 +89,9 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('user-center-updata', '修改个人信息')),                                                     
         new HtmlWebpackPlugin(getHtmlConfig('result', '登陆提示')),
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
-        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),        
+        new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),  
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '商品详情')),        
+              
     ],
 };
 // 不知道作用
