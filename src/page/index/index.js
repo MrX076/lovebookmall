@@ -1,14 +1,17 @@
 
 'use strict';
 require('./index.css');
+require('page/swiper/swiper-4.2.0.min.css');
 require('page/common/header/index.js');
 require('page/common/nav/index.js');
-var navSide = require('page/common/nav-side/index.js');
-var _lovebook      = require('util/lovebook.js');
+var Swiper=require('page/swiper/swiper-4.2.0.min.js');
 
-navSide.init({
-    name:'user-center'
-})
+// var navSide = require('page/common/nav-side/index.js');
+// var _lovebook      = require('util/lovebook.js');
+//初始化侧边导航
+// navSide.init({
+//     name:'user-center'
+// })
 
 var swiper = new Swiper('.swiper-container', {
     pagination: {el:'.swiper-pagination',},
@@ -21,7 +24,6 @@ var swiper = new Swiper('.swiper-container', {
     centeredSlides: true,
     loop: true,
     autoplay: true,
-    
     autoplayDisableOnInteraction: false
 });
 

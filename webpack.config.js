@@ -34,6 +34,9 @@ var config = {
         'user-center-updata'   : ['./src/page/user-center-updata/index.js'], 
         'detail'               : ['./src/page/detail/index.js'],
         'cart'                 : ['./src/page/cart/index.js'],
+        'swiper'               : ['./src/page/swiper/swiper-4.2.0.min.js'],
+        'order-confirm'        : ['./src/page/order-confirm/index.js'],
+
         
          
 
@@ -90,7 +93,10 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('result', '登陆提示')),
         new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情')),  
-        new HtmlWebpackPlugin(getHtmlConfig('cart', '商品详情')),        
+        new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')), 
+        new HtmlWebpackPlugin(getHtmlConfig('order-confirm', '订单确认')), 
+        
+
               
     ],
 };
