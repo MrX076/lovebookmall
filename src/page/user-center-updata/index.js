@@ -2,7 +2,7 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var navSide         = require('page/common/nav-side/index.js');
-var _lovebook             = require('util/lovebook.js');
+var _lovebook       = require('util/lovebook.js');
 var _user           = require('service/user-service.js');
 var templateIndex   = require('./index.string');
 

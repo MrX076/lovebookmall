@@ -1,7 +1,7 @@
 'use strict';
 require('./index.css');
 var _lovebook                 = require('util/lovebook.js');
-var templatePagination  = require('./index.string');
+var templatePagination        = require('./index.string');
 
 var Pagination = function(){
     var _this = this;

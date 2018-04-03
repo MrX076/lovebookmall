@@ -1,8 +1,8 @@
 'use strict';
 
-var _lovebook = require('util/lovebook.js');
+var _lovebook   = require('util/lovebook.js');
 
-var _cart = {
+var _cart       = {
     // 获取购物车数量
     getCartCount : function(resolve, reject){
         _lovebook.request({

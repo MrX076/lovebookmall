@@ -2,8 +2,8 @@
 'use strict';
 require ('./index.css');
 require('page/common/nav-simple/index.js');
-var _user   = require('service/user-service.js');
-var _lovebook = require('util/lovebook.js');
+var _user       = require('service/user-service.js');
+var _lovebook   = require('util/lovebook.js');
 
 // 表单里的错误提示
 var formError = {
