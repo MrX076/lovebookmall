@@ -1,9 +1,3 @@
-/*
-* @Author: Rosen
-* @Date:   2017-06-07 21:25:20
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-06-08 14:43:33
-*/
 
 'use strict';
 var _lovebook               = require('util/lovebook.js');

@@ -1,6 +1,6 @@
 .page-wrap{
     padding: 40px 0;
-    background: tomato;
+    background: #7a9ad7;
     /* background-image:url('./image/background-book.jpg') ; */
 }
 /* 表单框 */
@@ -9,6 +9,7 @@
     margin: 0 auto;
     width: 400px;
     background: #fff;
+    border-radius: 20px;
 }
 .user-con .user-title{
     text-align: center;

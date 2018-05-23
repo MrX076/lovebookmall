@@ -6,23 +6,29 @@
     </head>
     <body>
         <%= require('html-loader!./layout/nav.html')  %>
-        <%= require('html-loader!./layout/head.html')  %>
+  
         <div class="crumb">
             <div class="w">
-                <div class="crumb-con">
-                    <a class="link" href="./index.html">lovebook</a>
+                <div class="crumb-con">  
+                    <a class="link" href="./index.html">MRX书城</a>
                     <span>></span>
                     <span class="link-text"><%= htmlWebpackPlugin.options.title%></span>
                 </div>
             </div>
         </div>
         <div class="page-wrap w">
-            <%= require('html-loader!./layout/nav-side.html')  %>
+
             <div class="content with-nav">
                 <div class="panel">
-                    <div class="panel-title"><h2>个人中心</h2></div>
+                    <div class="panel-title">
+                        <h1>关于书城</h1>
+                    </div>
                     <div class="panel-body">
-                        <div class="loading"></div>
+                        <div >
+                            <h2>
+                                这是一个不知道要干什么的书城
+                            </h2>
+                        </div>
                     </div>
                 </div>
             </div>

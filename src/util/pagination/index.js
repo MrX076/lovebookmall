@@ -1,4 +1,5 @@
 'use strict';
+//列表分页
 require('./index.css');
 var _lovebook                 = require('util/lovebook.js');
 var templatePagination        = require('./index.string');

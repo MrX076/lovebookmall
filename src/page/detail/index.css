@@ -5,7 +5,7 @@
 }
 .intro-wrap .p-img-con{
     float: left;
-    width: 420px;
+    width: 620px;
 }
 /* 主图 */
 .intro-wrap .p-img-con .main-img-con{
@@ -41,7 +41,7 @@
 /* 商品信息 */
 .intro-wrap .p-info-con{
     float: left;
-    width: 640px;
+    width: 440px;
     margin-left: 20px;
 }
 .intro-wrap .p-info-con .p-name{

@@ -86,6 +86,12 @@ var page = {
             result.msg = '用户名不能为空';
             return result;
         }
+        //验证用户名格式
+        if(formData.username.length <6){
+            result.msg = '用户名长度小于6位';
+            return result;
+        }
+
         //验证密码是否为空
         if(!_lovebook.validate(formData.password,'require')){
             result.msg = '密码不能为空';
