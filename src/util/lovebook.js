@@ -66,11 +66,11 @@ var _lovebook = {
         }
         // 手机号验证
         if('phone' === type){
-            return /^1\d{10}$/.test(value);
+            return /^((13[0-9])|(14[5,7,9])|(15[^4])|(18[0-9])|(17[0,1,3,5,6,7,8]))\d{8}$/.test(value);
         }
         // 邮箱格式验证
         if('email' === type){
-            return /^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(value);
+            return /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(value);
         }
     },
     // 统一登录处理

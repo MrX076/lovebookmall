@@ -1,8 +1,8 @@
 var webpack             = require('webpack');
 var ExtractTextPlugin   = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin   = require('html-webpack-plugin');
-var path = require('path');
-path: path.resolve(__dirname, './dist/js');
+// var path = require('path');
+// path: path.resolve(__dirname, './dist/js');
 
 // 环境变量配置，dev / online
 var WEBPACK_ENV         = process.env.WEBPACK_ENV || 'dev';
@@ -42,7 +42,7 @@ var config = {
         'swiper'            : ['./src/page/swiper/swiper-4.2.0.min.js']
     },
     output: {
-        path        : __dirname + "/dist/js",
+        path        : __dirname + "/dist/",
         publicPath  : 'dev' === WEBPACK_ENV ? '/dist/' : '//s.bookmmall.com/mmall-fe/dist/',
         filename    : 'js/[name].js'
     },

@@ -91,6 +91,10 @@ var page = {
             result.msg = '用户名长度小于6位';
             return result;
         }
+        if(formData.username.length >12){
+            result.msg = '用户名长度大于12位';
+            return result;
+        }
 
         //验证密码是否为空
         if(!_lovebook.validate(formData.password,'require')){
@@ -100,6 +104,10 @@ var page = {
         //验证密码格式
         if(formData.password.length <6){
             result.msg = '密码长度小于6位';
+            return result;
+        }
+        if(formData.password.length >18){
+            result.msg = '密码长度大于18位';
             return result;
         }
         //验证两次密码输入是否一致

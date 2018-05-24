@@ -36,7 +36,7 @@ var page = {
                 _order.createOrder({
                     shippingId : shippingId
                 }, function(res){
-                    window.location.href = './payment.html?orderNumber=' + res.orderNo;
+                    window.location.href = './order-detail.html?orderNumber=' + res.orderNo;
                 }, function(errMsg){
                     _lovebook.errorTips(errMsg)
                 });

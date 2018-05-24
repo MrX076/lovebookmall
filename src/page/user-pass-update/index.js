@@ -56,8 +56,8 @@ var page = {
             return result;
         }
         // 验证新密码长度
-        if(!formData.passwordNew || formData.passwordNew.length < 6){
-            result.msg = '密码长度不得少于6位';
+        if(!formData.passwordNew || formData.passwordNew.length < 6 ||formData.passwordNew.length >18){
+            result.msg = '请输入6~18位密码';
             return result;
         }
         // 验证两次输入的密码是否一致

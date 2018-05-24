@@ -77,7 +77,7 @@ var page = {
         $('#submit-password').click(function(){
             var password = $.trim($('#password').val());
             // 密码不为空
-            if(password && password.length >= 6){
+            if(password && password.length >= 6&&password.length <= 18){
                 // 检查密码提示问题答案
                 _user.resetPassword({
                     username        : _this.data.username,
@@ -91,7 +91,7 @@ var page = {
             }
             // 密码为空
             else{
-                formError.show('请输入不少于6位的新密码');
+                formError.show('请输入6~18位的新密码');
             }
         });
         
