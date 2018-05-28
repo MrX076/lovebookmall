@@ -2,14 +2,14 @@
 require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _product        = require('service/product-service.js');
 var _cart           = require('service/cart-service.js');
 var templateIndex   = require('./index.string');
 
 var page = {
     data : {
-        productId : _lovebook.getUrlParam('productId') || '',
+        productId : _public.getUrlParam('productId') || '',
     },
     init : function(){
         this.onLoad();
@@ -18,7 +18,7 @@ var page = {
     onLoad : function(){
         // 如果没有传productId, 自动跳回首页
         if(!this.data.productId){
-            _lovebook.goHome();
+            _public.goHome();
         }
         this.loadDetail();
     },
@@ -51,7 +51,7 @@ var page = {
             }, function(res){
                 window.location.href = './cart.html?';
             }, function(errMsg){
-                _lovebook.errorTips(errMsg);
+                _public.errorTips(errMsg);
             });
         });
     },
@@ -68,7 +68,7 @@ var page = {
             // 缓存住detail的数据
             _this.data.detailInfo = res;
             // render
-            html = _lovebook.renderHtml(templateIndex, res);
+            html = _public.renderHtml(templateIndex, res);
             $pageWrap.html(html);
         }, function(errMsg){
             $pageWrap.html('<p class="err-tip">此商品太淘气，找不到了</p>');

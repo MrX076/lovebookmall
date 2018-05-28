@@ -3,7 +3,7 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var navSide         = require('page/common/nav-side/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _order          = require('service/order-service.js');
 var Pagination      = require('util/pagination/index.js');
 var templateIndex   = require('./index.string');
@@ -34,7 +34,7 @@ var page = {
         $listCon.html('<div class="loading"></div>');
         _order.getOrderList(this.data.listParam, function(res){
             // 渲染html
-            orderListHtml = _lovebook.renderHtml(templateIndex, res);
+            orderListHtml = _public.renderHtml(templateIndex, res);
             $listCon.html(orderListHtml);
             _this.loadPagination({
                 hasPreviousPage : res.hasPreviousPage,

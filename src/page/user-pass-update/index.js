@@ -3,7 +3,7 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var navSide         = require('page/common/nav-side/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _user           = require('service/user-service.js');
 
 // page 逻辑部分
@@ -34,13 +34,13 @@ var page = {
                     passwordOld : userInfo.password,
                     passwordNew : userInfo.passwordNew
                 }, function(res, msg){
-                    _lovebook.successTips(msg);
+                    _public.successTips(msg);
                 }, function(errMsg){
-                    _lovebook.errorTips(errMsg);
+                    _public.errorTips(errMsg);
                 });
             }
             else{
-                _lovebook.errorTips(validateResult.msg);
+                _public.errorTips(validateResult.msg);
             }
         });
     },
@@ -51,7 +51,7 @@ var page = {
             msg     : ''
         };
         // 验证原密码是否为空
-        if(!_lovebook.validate(formData.password, 'require')){
+        if(!_public.validate(formData.password, 'require')){
             result.msg = '原密码不能为空';
             return result;
         }

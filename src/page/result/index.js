@@ -2,13 +2,13 @@
 'use strict';
 require('./index.css');
 require('page/common/nav-simple/index.js');
-var _lovebook = require('util/lovebook.js');
+var _public = require('util/public.js');
 
 $(function(){
-    var type        = _lovebook.getUrlParam('type') || 'default',
+    var type        = _public.getUrlParam('type') || 'default',
         $element    = $('.' + type + '-success');
     if(type === 'payment'){
-        var orderNumber  = _lovebook.getUrlParam('orderNumber'),
+        var orderNumber  = _public.getUrlParam('orderNumber'),
             $orderNumber = $element.find('.order-number');
         $orderNumber.attr('href', $orderNumber.attr('href') + orderNumber);
     }

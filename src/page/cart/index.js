@@ -2,7 +2,7 @@
 require('./index.css');
 require('page/common/header/index.js');
 var nav             = require('page/common/nav/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _cart           = require('service/cart-service.js');
 var templateIndex   = require('./index.string');
 
@@ -72,7 +72,7 @@ var page = {
                 newCount    = 0;
             if(type === 'plus'){
                 if(currCount >= maxCount){
-                    _lovebook.errorTips('该商品数量已达到上限');
+                    _public.errorTips('该商品数量已达到上限');
                     return;
                 }
                 newCount = currCount + 1;
@@ -114,7 +114,7 @@ var page = {
                     _this.deleteCartProduct(arrProductIds.join(','));
                 }
                 else{
-                    _lovebook.errorTips('您还没有选中要删除的商品');
+                    _public.errorTips('您还没有选中要删除的商品');
                 }  
             }
         });
@@ -124,7 +124,7 @@ var page = {
             if(_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0){
                 window.location.href = './order-confirm.html';
             }else{
-                _lovebook.errorTips('请选择商品后再提交');
+                _public.errorTips('请选择商品后再提交');
             }
         });
     },
@@ -144,7 +144,7 @@ var page = {
         // 缓存购物车信息
         this.data.cartInfo = data;
         // 生成HTML
-        var cartHtml = _lovebook.renderHtml(templateIndex, data);
+        var cartHtml = _public.renderHtml(templateIndex, data);
         $('.page-wrap').html(cartHtml);
         // 通知导航的购物车更新数量
         nav.loadCartCount();

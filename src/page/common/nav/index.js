@@ -1,6 +1,6 @@
 'use strict'
 require('./index.css');
-var _lovebook = require('util/lovebook.js');
+var _public = require('util/public.js');
 var _cart = require('service/cart-service.js');
 var _user = require('service/user-service.js');
 var nav ={
@@ -13,7 +13,7 @@ var nav ={
     bindEvent : function() {
         //登录事件
         $('.login').click(function(){
-            _lovebook.doLogin();
+            _public.doLogin();
         });
         //注册事件
         $('.register').click(function(){
@@ -24,7 +24,7 @@ var nav ={
             _user.logout(function(res){
                 window.location.reload();
             },function(errMsg){
-                _lovebook.errorTips(errMsg)
+                _public.errorTips(errMsg)
             });
         });
 

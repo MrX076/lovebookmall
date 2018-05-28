@@ -2,7 +2,7 @@
 require('./index.css');
 require('page/common/header/index.js');
 require('page/common/nav/index.js');
-var _lovebook           = require('util/lovebook.js');
+var _public           = require('util/public.js');
 var _order              = require('service/order-service.js');
 var _address            = require('service/address-service.js');
 var templateAddress     = require('./address-list.string');
@@ -38,10 +38,10 @@ var page = {
                 }, function(res){
                     window.location.href = './order-detail.html?orderNumber=' + res.orderNo;
                 }, function(errMsg){
-                    _lovebook.errorTips(errMsg)
+                    _public.errorTips(errMsg)
                 });
             }else{
-                _lovebook.errorTips('请选择地址后再提交');
+                _public.errorTips('请选择地址后再提交');
             }
         });
         // 地址的添加
@@ -66,7 +66,7 @@ var page = {
                     }
                 });
             }, function(errMsg){
-                _lovebook.errorTips(errMsg);
+                _public.errorTips(errMsg);
             });
         });
         // 地址的删除
@@ -77,7 +77,7 @@ var page = {
                 _address.deleteAddress(id, function(res){
                     _this.loadAddressList();
                 }, function(errMsg){
-                    _lovebook.errorTips(errMsg);
+                    _public.errorTips(errMsg);
                 });
             }
         });
@@ -89,7 +89,7 @@ var page = {
         // 获取地址列表
         _address.getAddressList(function(res){
             _this.addressFilter(res);
-            var addressListHtml = _lovebook.renderHtml(templateAddress, res);
+            var addressListHtml = _public.renderHtml(templateAddress, res);
             $('.address-con').html(addressListHtml);
         }, function(errMsg){
             $('.address-con').html('<p class="err-tip">地址加载失败，请刷新后重试</p>');
@@ -117,7 +117,7 @@ var page = {
         $('.product-con').html('<div class="loading"></div>');
         // 获取地址列表
         _order.getProductList(function(res){
-            var productListHtml = _lovebook.renderHtml(templateProduct, res);
+            var productListHtml = _public.renderHtml(templateProduct, res);
             $('.product-con').html(productListHtml);
         }, function(errMsg){
             $('.product-con').html('<p class="err-tip">商品信息加载失败，请刷新后重试</p>');

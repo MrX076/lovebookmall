@@ -1,6 +1,6 @@
 'use strict';
 require('./index.css');
-var _lovebook           = require('util/lovebook.js');
+var _public           = require('util/public.js');
 var templateIndex       = require('./index.string');
 // 侧边导航
 var navSide = {
@@ -27,7 +27,7 @@ var navSide = {
             }
         };
         // 渲染list数据
-        var navHtml = _lovebook.renderHtml(templateIndex, {
+        var navHtml = _public.renderHtml(templateIndex, {
             navList : this.option.navList
         });
         // 把html放入容器

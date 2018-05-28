@@ -3,14 +3,14 @@
 require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _payment        = require('service/payment-service.js');
 var templateIndex   = require('./index.string');
 
 // page 逻辑部分
 var page = {
     data: {
-        orderNumber : _lovebook.getUrlParam('orderNumber')
+        orderNumber : _public.getUrlParam('orderNumber')
     },
     init: function(){
         this.onLoad();
@@ -27,7 +27,7 @@ var page = {
         $pageWrap.html('<div class="loading"></div>');
         _payment.getPaymentInfo(this.data.orderNumber, function(res){
             // 渲染html
-            paymentHtml = _lovebook.renderHtml(templateIndex, res);
+            paymentHtml = _public.renderHtml(templateIndex, res);
             $pageWrap.html(paymentHtml);
             _this.listenOrderStatus();
         }, function(errMsg){

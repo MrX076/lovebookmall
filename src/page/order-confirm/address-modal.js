@@ -1,6 +1,6 @@
 
 'use strict';
-var _lovebook               = require('util/lovebook.js');
+var _public               = require('util/public.js');
 var _cities                 = require('util/cities/index.js');
 var _address                = require('service/address-service.js');
 var templateAddressModal    = require('./address-modal.string');
@@ -30,28 +30,28 @@ var addressModal = {
             // 使用新地址，且验证通过
             if(!isUpdate && receiverInfo.status){
                 _address.save(receiverInfo.data, function(res){
-                    _lovebook.successTips('地址添加成功');
+                    _public.successTips('地址添加成功');
                     _this.hide();
                     typeof _this.option.onSuccess === 'function' 
                         && _this.option.onSuccess(res);
                 }, function(errMsg){
-                    _lovebook.errorTips(errMsg);
+                    _public.errorTips(errMsg);
                 });
             }
             // 更新收件人，并且验证通过
             else if(isUpdate && receiverInfo.status){
                 _address.update(receiverInfo.data, function(res){
-                    _lovebook.successTips('地址修改成功');
+                    _public.successTips('地址修改成功');
                     _this.hide();
                     typeof _this.option.onSuccess === 'function' 
                         && _this.option.onSuccess(res);
                 }, function(errMsg){
-                    _lovebook.errorTips(errMsg);
+                    _public.errorTips(errMsg);
                 });
             }
             // 验证不通过
             else{
-                _lovebook.errorTips(receiverInfo.errMsg || '好像哪里不对了~');
+                _public.errorTips(receiverInfo.errMsg || '好像哪里不对了~');
             }
         });
         // 保证点击modal内容区的时候，不关闭弹窗
@@ -64,7 +64,7 @@ var addressModal = {
         });
     },
     loadModal : function(){
-        var addressModalHtml = _lovebook.renderHtml(templateAddressModal, {
+        var addressModalHtml = _public.renderHtml(templateAddressModal, {
             isUpdate    :  this.option.isUpdate,
             data        : this.option.data
         });

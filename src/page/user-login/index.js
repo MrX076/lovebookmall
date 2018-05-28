@@ -4,7 +4,7 @@ require('./index.css');
 require('page/common/nav-simple/index.js');
 var _user     = require('service/user-service.js');
 // var _nav      = require('page/common/nav/index.js');
-var _lovebook = require ('util/lovebook.js');
+var _public = require ('util/public.js');
 
 // 表单里的错误提示
 var formError = {
@@ -46,7 +46,7 @@ var page = {
         // 验证成功
         if(validateResult.status){
             _user.login(formData, function(res){
-                window.location.href = _lovebook.getUrlParam('redirect') || './index.html?';
+                window.location.href = _public.getUrlParam('redirect') || './index.html?';
             }, function(errMsg){
                 formError.show(errMsg);
             });
@@ -64,11 +64,11 @@ var page = {
             status  : false,
             msg     : ''
         };
-        if(!_lovebook.validate(formData.username, 'require')){
+        if(!_public.validate(formData.username, 'require')){
             result.msg = '用户名不能为空';
             return result;
         }
-        if(!_lovebook.validate(formData.password, 'require')){
+        if(!_public.validate(formData.password, 'require')){
             result.msg = '密码不能为空';
             return result;
         }

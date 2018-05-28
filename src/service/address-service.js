@@ -1,12 +1,12 @@
 
 'use strict';
-var _lovebook = require('util/lovebook.js');
+var _public = require('util/public.js');
 
 var _address = {
     // 获取地址列表
     getAddressList : function(resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/shipping/list.do'),
+        _public.request({
+            url     : _public.getServerUrl('/shipping/list.do'),
             data    : {
                 pageSize : 50
             },
@@ -16,8 +16,8 @@ var _address = {
     },
     // 新建收件人
     save : function(addressInfo, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/shipping/add.do'),
+        _public.request({
+            url     : _public.getServerUrl('/shipping/add.do'),
             data    : addressInfo,
             success : resolve,
             error   : reject
@@ -25,8 +25,8 @@ var _address = {
     },
     // 更新收件人
     update : function(addressInfo, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/shipping/update.do'),
+        _public.request({
+            url     : _public.getServerUrl('/shipping/update.do'),
             data    : addressInfo,
             success : resolve,
             error   : reject
@@ -34,8 +34,8 @@ var _address = {
     },
     // 删除收件人
     deleteAddress : function(shippingId, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/shipping/del.do'),
+        _public.request({
+            url     : _public.getServerUrl('/shipping/del.do'),
             data    : {
                 shippingId : shippingId
             },
@@ -45,8 +45,8 @@ var _address = {
     },
     // 获取单条收件人信息
     getAddress : function(shippingId, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/shipping/select.do'),
+        _public.request({
+            url     : _public.getServerUrl('/shipping/select.do'),
             data    : {
                 shippingId : shippingId
             },

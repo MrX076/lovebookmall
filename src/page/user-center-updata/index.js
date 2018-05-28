@@ -3,7 +3,7 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var navSide         = require('page/common/nav-side/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _user           = require('service/user-service.js');
 var templateIndex   = require('./index.string');
 
@@ -35,14 +35,14 @@ var page = {
             if(validateResult.status){
                 // 更改用户信息
                 _user.updateUserInfo(userInfo, function(res, msg){
-                    _lovebook.successTips(msg);
+                    _public.successTips(msg);
                     window.location.href = './user-center.html';
                 }, function(errMsg){
-                    _lovebook.errorTips(errMsg);
+                    _public.errorTips(errMsg);
                 });
             }
             else{
-                _lovebook.errorTips(validateResult.msg);
+                _public.errorTips(validateResult.msg);
             }
         });
     },
@@ -50,10 +50,10 @@ var page = {
     loadUserInfo : function(){
         var userHtml = '';
         _user.getUserInfo(function(res){
-            userHtml = _lovebook.renderHtml(templateIndex, res);
+            userHtml = _public.renderHtml(templateIndex, res);
             $('.panel-body').html(userHtml);
         }, function(errMsg){
-            _lovebook.errorTips(errMsg);
+            _public.errorTips(errMsg);
         });
     },
     // 验证字段信息
@@ -63,22 +63,22 @@ var page = {
             msg     : ''
         };
         // 验证手机号
-        if(!_lovebook.validate(formData.phone, 'phone')){
+        if(!_public.validate(formData.phone, 'phone')){
             result.msg = '手机号格式不正确';
             return result;
         }
         // 验证邮箱格式
-        if(!_lovebook.validate(formData.email, 'email')){
+        if(!_public.validate(formData.email, 'email')){
             result.msg = '邮箱格式不正确';
             return result;
         }
         // 验证密码提示问题是否为空
-        if(!_lovebook.validate(formData.question, 'require')){
+        if(!_public.validate(formData.question, 'require')){
             result.msg = '密码提示问题不能为空';
             return result;
         }
         // 验证密码提示问题答案是否为空
-        if(!_lovebook.validate(formData.answer, 'require')){
+        if(!_public.validate(formData.answer, 'require')){
             result.msg = '密码提示问题答案不能为空';
             return result;
         }

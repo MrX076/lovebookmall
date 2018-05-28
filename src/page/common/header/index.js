@@ -1,6 +1,6 @@
 'use strict';
 require('./index.css');
-var _lovebook     = require('util/lovebook.js');
+var _public     = require('util/public.js');
 
 var header = {
      init : function() {
@@ -8,7 +8,7 @@ var header = {
          this.bindEvent();
      },
      onload : function() {
-        var keyword = _lovebook.getUrlParam('kerword');
+        var keyword = _public.getUrlParam('kerword');
         //keyword 存在，回填到输入框
         if(keyword){
             $('#search-input').val(keyword);
@@ -36,7 +36,7 @@ var header = {
          }
          //keyword 不存在，返回主页
          else{
-             _lovebook.goHome();
+             _public.goHome();
          }
      }
 }

@@ -4,14 +4,14 @@ require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var navSide         = require('page/common/nav-side/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _order          = require('service/order-service.js');
 var templateIndex   = require('./index.string');
 
 // page 逻辑部分
 var page = {
     data: {
-        orderNumber : _lovebook.getUrlParam('orderNumber')
+        orderNumber : _public.getUrlParam('orderNumber')
     },
     init: function(){
         this.onLoad();
@@ -30,10 +30,10 @@ var page = {
         $(document).on('click', '.order-cancel', function(){
             if(window.confirm('确实要取消该订单？')){
                 _order.cancelOrder(_this.data.orderNumber, function(res){
-                    _lovebook.successTips('该订单取消成功');
+                    _public.successTips('该订单取消成功');
                     _this.loadDetail();
                 }, function(errMsg){
-                    _lovebook.errorTips(errMsg);
+                    _public.errorTips(errMsg);
                 });
             }
         });
@@ -47,7 +47,7 @@ var page = {
         _order.getOrderDetail(this.data.orderNumber, function(res){
             _this.dataFilter(res);
             // 渲染html
-            orderDetailHtml = _lovebook.renderHtml(templateIndex, res);
+            orderDetailHtml = _public.renderHtml(templateIndex, res);
             $content.html(orderDetailHtml);
         }, function(errMsg){
             $content.html('<p class="err-tip">' + errMsg + '</p>');

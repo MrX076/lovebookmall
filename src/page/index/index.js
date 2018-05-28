@@ -7,7 +7,7 @@ require('page/common/nav/index.js');
 var Swiper=require('page/swiper/swiper-4.2.0.min.js');
 
 // var navSide = require('page/common/nav-side/index.js');
-// var _lovebook      = require('util/lovebook.js');
+// var _public      = require('util/public.js');
 //初始化侧边导航
 // navSide.init({
 //     name:'user-center'
@@ -31,7 +31,7 @@ var swiper = new Swiper('.swiper-container', {
 
 
 ///测试线上数据的请求是是否能够成功
-// _lovebook.request({
+// _public.request({
 //     url: 'happymmall.com/product/list.do?keyword=1',
 //     success: function(res){
 //         console.log(res);
@@ -42,7 +42,7 @@ var swiper = new Swiper('.swiper-container', {
 // })
 
 //获取url参数
-// console.log(_lovebook.getUrlParam('test'));
+// console.log(_public.getUrlParam('test'));
 
 
 //html模板渲染
@@ -50,6 +50,6 @@ var swiper = new Swiper('.swiper-container', {
 // var data = {
 //     data :123
 // }
-// console.log(_lovebook.renderHtml(html,data));
+// console.log(_public.renderHtml(html,data));
 
 

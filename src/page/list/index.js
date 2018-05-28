@@ -2,7 +2,7 @@
 require('./index.css');
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
-var _lovebook       = require('util/lovebook.js');
+var _public       = require('util/public.js');
 var _product        = require('service/product-service.js');
 var Pagination      = require('util/pagination/index.js');
 var templateIndex   = require('./index.string');
@@ -10,11 +10,11 @@ var templateIndex   = require('./index.string');
 var page = {
     data : {
         listParam : {
-            keyword         : _lovebook.getUrlParam('keyword')    || '',
-            categoryId      : _lovebook.getUrlParam('categoryId') || '',
-            orderBy         : _lovebook.getUrlParam('orderBy')    || 'default',
-            pageNum         : _lovebook.getUrlParam('pageNum')    || 1,
-            pageSize        : _lovebook.getUrlParam('pageSize')   || 2
+            keyword         : _public.getUrlParam('keyword')    || '',
+            categoryId      : _public.getUrlParam('categoryId') || '',
+            orderBy         : _public.getUrlParam('orderBy')    || 'default',
+            pageNum         : _public.getUrlParam('pageNum')    || 1,
+            pageSize        : _public.getUrlParam('pageSize')   || 2
         }
     },
     init : function(){
@@ -73,7 +73,7 @@ var page = {
             ? (delete listParam.keyword) : (delete listParam.categoryId);
         // 请求接口
         _product.getProductList(listParam, function(res){
-            listHtml = _lovebook.renderHtml(templateIndex, {
+            listHtml = _public.renderHtml(templateIndex, {
                 list :  res.list
             });
             $pListCon.html(listHtml);
@@ -86,7 +86,7 @@ var page = {
                 pages           : res.pages
             });
         }, function(errMsg){
-            _lovebook.errorTips(errMsg);
+            _public.errorTips(errMsg);
         });
     },
     // 加载分页信息

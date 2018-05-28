@@ -1,7 +1,7 @@
 'use strict';
 //列表分页
 require('./index.css');
-var _lovebook                 = require('util/lovebook.js');
+var _public                 = require('util/public.js');
 var templatePagination        = require('./index.string');
 
 var Pagination = function(){
@@ -67,7 +67,7 @@ Pagination.prototype.getPaginationHtml = function(){
         value : this.option.nextPage,
         disabled : !this.option.hasNextPage
     });
-    html = _lovebook.renderHtml(templatePagination, {
+    html = _public.renderHtml(templatePagination, {
         pageArray   : pageArray,
         pageNum     : option.pageNum,
         pages       : option.pages

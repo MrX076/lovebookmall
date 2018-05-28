@@ -1,20 +1,20 @@
 'use strict';
 
-var _lovebook   = require('util/lovebook.js');
+var _public   = require('util/public.js');
 
 var _cart       = {
     // 获取购物车数量
     getCartCount : function(resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/get_cart_product_count.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/get_cart_product_count.do'),
             success : resolve,
             error   : reject
         });
     },
     // 添加到购物车
     addToCart : function(productInfo, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/add.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/add.do'),
             data    : productInfo,
             success : resolve,
             error   : reject
@@ -22,16 +22,16 @@ var _cart       = {
     },
     // 获取购物车列表
     getCartList : function(resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/list.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/list.do'),
             success : resolve,
             error   : reject
         });
     },
     // 选择购物车商品
     selectProduct : function(productId, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/select.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/select.do'),
             data    : {
                 productId : productId
             },
@@ -41,8 +41,8 @@ var _cart       = {
     },
     // 取消选择购物车商品
     unselectProduct : function(productId, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/un_select.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/un_select.do'),
             data    : {
                 productId : productId
             },
@@ -52,24 +52,24 @@ var _cart       = {
     },
     // 选中全部商品
     selectAllProduct : function(resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/select_all.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/select_all.do'),
             success : resolve,
             error   : reject
         });
     },
     // 取消选中全部商品
     unselectAllProduct : function(resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/un_select_all.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/un_select_all.do'),
             success : resolve,
             error   : reject
         });
     },
     // 更新购物车商品数量
     updateProduct : function(productInfo, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/update.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/update.do'),
             data    : productInfo,
             success : resolve,
             error   : reject
@@ -77,8 +77,8 @@ var _cart       = {
     },
     // 删除指定商品
     deleteProduct : function(productIds, resolve, reject){
-        _lovebook.request({
-            url     : _lovebook.getServerUrl('/cart/delete_product.do'),
+        _public.request({
+            url     : _public.getServerUrl('/cart/delete_product.do'),
             data    : {
                 productIds : productIds
             },

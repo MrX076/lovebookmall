@@ -5,7 +5,7 @@ var Hogan = require('hogan.js');
 var conf = {
     serverHost : ''
 };
-var _lovebook = {
+var _public = {
     // 网络请求 
     request : function(param){
         var _this = this;
@@ -82,4 +82,4 @@ var _lovebook = {
     }
 };
 
-module.exports = _lovebook;
+module.exports = _public;
