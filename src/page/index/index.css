@@ -1,11 +1,35 @@
+.f_list{
+    position: fixed;
+    top: 260px;
+    left: 60px;
+}
+.f_list>li>a{
+    font-size: 16px;
+    line-height: 32px;
+    color: black;
+}
+.f_list>li>a:hover{
+    color: #a93931;
+}
+.key_list{  
+    top: 20px;
+    font-size: 18px;
+    line-height: 36px;
+}
+.key_list:hover{
+    color: #c60023;
+}
 .keywords-list{
+    display: none;
     float: left;
     width: 240px;
     height: 360px;
     padding: 10px 0;
     margin-right: 10px;
-    background: #666;
+    background: #66666691;
     color: #fff;
+    position: absolute;
+    z-index: 10;
 }
 .keywords-list .keywords-item{
     padding-left: 10px;
@@ -24,7 +48,7 @@
     color: #c60023;
 }
 .banner{
-    width: 830px;
+    width: 1080px;
     height: 360px;
     float: left;
     background: red;
@@ -63,29 +87,30 @@
 /* 楼层样式 */
 /* floor */
 .floor-wrap .floor-title{
-    height: 50px;
-    line-height: 50px;
+    height: 60px;
+    line-height: 60px;
     color: #d58717;
-    font-weight: normal;
+    font-weight: 700;
     font-size: 20px;
-    border-bottom: 1px solid #d58717;
+    text-align: center;
+    /* border-bottom: 1px solid #d58717; */
 }
 /* 更改各楼层标题颜色 */
 .floor-wrap:nth-child(2) .floor-title{
     color: #3b838c;
-    border-bottom: 1px solid #3b838c;
+    /* border-bottom: 1px solid #3b838c; */
 }
 .floor-wrap:nth-child(3) .floor-title{
     color: #a93931;
-    border-bottom: 1px solid #a93931;
+    /* border-bottom: 1px solid #a93931; */
 }
 .floor-wrap:nth-child(4) .floor-title{
     color: #488bad;
-    border-bottom: 1px solid #488bad;
+    /* border-bottom: 1px solid #488bad; */
 }
 .floor-wrap:nth-child(5) .floor-title{
     color: #642663;
-    border-bottom: 1px solid #642663;
+    /* border-bottom: 1px solid #642663; */
 }
 .floor-wrap .floor-list{
     margin-right: -20px;
@@ -106,7 +131,7 @@
 .floor-wrap .floor-list .floor-item .floor-text{
     position: absolute;
     top: 12px;
-    left: 20px;
+    left: 66px;
     font-size: 16px;
     color: #555;
 }

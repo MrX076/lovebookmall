@@ -3,7 +3,6 @@
 require('./index.css');
 require('page/common/nav-simple/index.js');
 var _user     = require('service/user-service.js');
-// var _nav      = require('page/common/nav/index.js');
 var _public = require ('util/public.js');
 
 // 表单里的错误提示
@@ -26,10 +25,8 @@ var page = {
         // 登录按钮的点击
         $('#submit').click(function(){
             _this.submit();
-        });
-        // 如果按下回车，也进行提交
+        });       
         $('.user-content').keyup(function(e){
-            // keyCode == 13 表示回车键
             if(e.keyCode === 13){
                 _this.submit();
             }

@@ -55,7 +55,7 @@ var _user = {
             method  : 'POST',
             success : resolve,
             error   : reject
-        });
+        }); 
     },
     // 检查密码提示问题答案
     checkAnswer : function(userInfo, resolve, reject){

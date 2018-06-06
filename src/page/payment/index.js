@@ -13,7 +13,7 @@ var page = {
         orderNumber : _public.getUrlParam('orderNumber')
     },
     init: function(){
-        this.onLoad();
+        this.onLoad();   
     },
     onLoad : function(){
         // 加载detail数据
@@ -22,8 +22,8 @@ var page = {
     // 加载订单列表
     loadPaymentInfo: function(){
         var _this           = this,
-            paymentHtml     = '',
-            $pageWrap       = $('.page-wrap');
+        paymentHtml     = '',
+        $pageWrap       = $('.page-wrap');
         $pageWrap.html('<div class="loading"></div>');
         _payment.getPaymentInfo(this.data.orderNumber, function(res){
             // 渲染html

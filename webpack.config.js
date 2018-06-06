@@ -39,7 +39,8 @@ var config = {
         'user-pass-update'  : ['./src/page/user-pass-update/index.js'],
         'result'            : ['./src/page/result/index.js'],
         'about'             : ['./src/page/about/index.js'],
-        'swiper'            : ['./src/page/swiper/swiper-4.2.0.min.js']
+        'swiper'            : ['./src/page/swiper/swiper-4.2.0.min.js'],
+        
     },
     output: {
         path        : __dirname + "/dist/",

@@ -27,7 +27,13 @@ var swiper = new Swiper('.swiper-container', {
     autoplayDisableOnInteraction: false
 });
 
-
+$(".key_list").mouseover(function(){
+    $('.keywords-list').css("display","block");
+    // $(".key_list").css('background','#cccccc')
+})
+$('.keywords-list').mouseleave(function(){
+    $('.keywords-list').css("display","none");
+})
 
 
 ///测试线上数据的请求是是否能够成功

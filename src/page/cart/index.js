@@ -149,7 +149,7 @@ var page = {
         // 通知导航的购物车更新数量
         nav.loadCartCount();
     },
-    // 删除指定商品，支持批量，productId用逗号分割
+    // 删除指定商品，
     deleteCartProduct : function(productIds){
         var _this = this;
         _cart.deleteProduct(productIds, function(res){

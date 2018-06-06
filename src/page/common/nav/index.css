@@ -1,7 +1,8 @@
 .nav{
-    background: #eee;
-    height: 30px;
-    line-height: 30px;   
+    background:#a9b5f1;
+    height: 36px;
+    line-height: 36px;  
+    font-size: 16px; 
 }
 /* 用户部分 */
 .nav .user{
@@ -12,12 +13,16 @@
 }
 .nav .user .link{
     margin-right: 5px;
+    color: #212709;
 }
 /* 导航链接部分 */
 .nav .nav-list{
-    float: right; 
+    float: left; 
 }
 .nav .nav-list .nav-item{
     display: inline-block;
     margin-left: 5px;
+}
+.nav .nav-list .nav-item .link{
+    color: #212709;
 }

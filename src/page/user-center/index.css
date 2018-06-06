@@ -8,3 +8,20 @@
     width: 60px;
     text-align: center;
 }
+.content {
+    float: left;
+    width: 950px;
+    background: #ecece7;
+    display: flex;
+    justify-content: center;
+}
+.content .panel{
+    width: 400px;
+    
+}
+.content .panel .panel-title h2{
+    padding-left: 39px;
+}
+.content .panel .panel-body  .user-info .btn{
+    margin-left:39px; 
+}

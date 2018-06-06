@@ -14,6 +14,7 @@ li{list-style: none;}
 a{
     text-align: none;
     color: burlywood;
+    text-decoration: none;
 }
 img{
     display: block;
@@ -67,6 +68,7 @@ input [type='checkbox']{
     outline: none;
     cursor: pointer;
     text-decoration: none;
+    border-radius: 16px;
 }
 .btn:hover{
     background: #d61837;
@@ -86,6 +88,7 @@ input [type='checkbox']{
     outline: none;
     cursor: pointer;
     text-decoration: none;
+   
 }
 
 .loading{

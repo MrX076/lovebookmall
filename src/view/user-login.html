@@ -6,7 +6,7 @@
     </head>
     <body>
         <%= require('html-loader!./layout/nav-simple.html')  %>
-        <div class="page-wrap">
+        <div class="page-wrap w">
             <div class="w">
                 <div class="user-con">
                     <div class="user-title">用户登录</div>
@@ -16,15 +16,11 @@
                             <p class="err-msg">Error</p>
                         </div>
                         <div class="user-item">
-                            <label class="user-label" for="">
-                                <i class="fa fa-user"></i>
-                            </label>
+                            <label for="username" class="user-label">用户名:</label>
                             <input class="user-content" id="username" placeholder="请输入用户名" autocomplete="off">
                         </div>
                         <div class="user-item">
-                            <label class="user-label" for="password">
-                                <i class="fa fa-lock"></i>
-                            </label>
+                            <label for="username" class="user-label">密码:</label>
                             <input type="password" class="user-content" id="password" placeholder="请输入密码" autocomplete="off">
                         </div>
                         <a class="btn btn-submit" id="submit">登录</a>
